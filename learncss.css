@@ -8,28 +8,38 @@
 }
 #navbar
 {
-    padding: 20px;
     background-color: #be3144;
     color: whitesmoke;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+    height: 10vh;
     display: flex;
 }
 #navbar ul
 {
-    width: 100%;
+    width: inherit;
+    height: inherit;
+    border: 3px solid black;
     list-style: none;
     display: flex;
     justify-content: flex-end;
 }
 #navbar li
 {
-    margin: 0 3%;
+    cursor: pointer;
+    height: 100%;
+    padding: 1em 3%;
+}
+#navbar li:hover
+{
+    background-color: #303841;
+    opacity: 0.8;
 }
 #navbar a
 {
+    font-weight: bolder;
     text-decoration: none;
     display: block;
     color: whitesmoke;
@@ -47,13 +57,26 @@
     background-color: #000;
     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
+#welcome-section h1
+{
+    font-size: 50px;
+    text-shadow: 2px 2px #000;
+    font-weight: bolder;
+    padding: 10px;
+}
+#welcome-section p
+{
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(224, 37, 37, 0.596);
+}
 #projects
 {
     width: 100vw;
     background-color: #45567d;
     border: 2px solid black;
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(100px, auto);
     justify-items: center;
     align-items: center;
 }
@@ -62,7 +85,7 @@
     max-width: 90%;
     padding: 5%;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
 }
 #projects h3
@@ -72,11 +95,14 @@
     font-weight: 3000;
     letter-spacing: 2px;
     font-size: x-large;
+    text-align: center;
 }
 #projects p
 {
-    background-color: #ddd;
-    color: black;
+    height: 10vh;
+    margin-top: 0;
+    padding: 1em 0;
+    color: #ddd;
     text-decoration: none;
     text-align: center;
 }
@@ -86,12 +112,72 @@
 }
 #projects .project-tile
 {
+    background-color: #303841;
     height: auto;
 }
 
 #projects .project-tile img
 {
+    margin-bottom: 0;
     width: 100%;
     max-width: 100%;
     height: auto;
+    object-fit: cover;
+}
+#projects #submit
+{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    color: white;
+    margin-bottom: 5em;
+    border: none;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    background-color: #303841;
+}
+#contact
+{
+    height: 100vh;
+    background-color: #303841;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+#contact h1
+{
+    font-weight: 400px;
+    text-shadow: 2px 2px #000;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+#contact p
+{
+    font-style: italic;
+}
+@media (max-width: 800px)
+{
+    #projects .container
+    {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 550px)
+{
+    #projects .container
+    {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 420px)
+{
+    #navbar ul
+    {
+        justify-content: center;
+    }
 }
